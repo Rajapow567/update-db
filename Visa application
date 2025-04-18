@@ -1,0 +1,618 @@
+<!DOCTYPE html>  <html lang="en">  <head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Visa Application Form</title>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.8.2/docx.min.js"></script>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      line-height: 1.6;  
+      margin: 0;  
+      padding: 20px;  
+      background-color: #f5f5f5;  
+    }  .container {  
+  max-width: 800px;  
+  margin: 0 auto;  
+  background-color: white;  
+  padding: 30px;  
+  border-radius: 8px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+
+h1 {  
+  text-align: center;  
+  color: #333;  
+  margin-bottom: 30px;  
+}  
+
+.form-group {  
+  margin-bottom: 20px;  
+}  
+
+label {  
+  display: block;  
+  margin-bottom: 5px;  
+  font-weight: bold;  
+}  
+
+input[type="text"],  
+input[type="date"],  
+select,  
+textarea {  
+  width: 100%;  
+  padding: 10px;  
+  border: 1px solid #ddd;  
+  border-radius: 4px;  
+  box-sizing: border-box;  
+}  
+
+.row {  
+  display: flex;  
+  gap: 20px;  
+}  
+
+.col {  
+  flex: 1;  
+}  
+
+.buttons {  
+  display: flex;  
+  justify-content: center;  
+  gap: 20px;  
+  margin-top: 30px;  
+}  
+
+button {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 12px 20px;  
+  border: none;  
+  border-radius: 4px;  
+  cursor: pointer;  
+  font-size: 16px;  
+}  
+
+button:hover {  
+  background-color: #45a049;  
+}  
+
+#exportBtn {  
+  background-color: #2196F3;  
+}  
+
+#exportBtn:hover {  
+  background-color: #0b7dda;  
+}
+
+  </style>  
+</head>  <body>  
+  <div class="container">  
+    <h1>Visa Application Form</h1>  <form id="visaForm">  
+  <div class="form-group">  
+    <label for="surname">1. Surname, Name</label>  
+    <input type="text" id="surname" name="surname" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="gender">2. Gender</label>  
+    <select id="gender" name="gender" required>  
+      <option value="">Select Gender</option>  
+      <option value="Male">Male</option>  
+      <option value="Female">Female</option>  
+    </select>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="birthDate">3. Date of Birth</label>  
+        <input type="date" id="birthDate" name="birthDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="birthPlace">Place of Birth</label>  
+        <input type="text" id="birthPlace" name="birthPlace" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="citizenship">4. Citizenship</label>  
+    <input type="text" id="citizenship" name="citizenship" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="nationality">5. Nationality</label>  
+    <input type="text" id="nationality" name="nationality" required>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="passportNumber">6. Passport №</label>  
+        <input type="text" id="passportNumber" name="passportNumber" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="issueDate">Date of Issue</label>  
+        <input type="date" id="issueDate" name="issueDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="expiryDate">Date of Expiry</label>  
+        <input type="date" id="expiryDate" name="expiryDate" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="position">7. Current Position, Place of Work/Study</label>  
+    <input type="text" id="position" name="position" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="address">8. Home Address</label>  
+    <textarea id="address" name="address" rows="3" required></textarea>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="visaPlace">9. Place of Obtaining a Visa</label>  
+    <input type="text" id="visaPlace" name="visaPlace" required>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="startDate">10. Start Date of Stay</label>  
+        <input type="date" id="startDate" name="startDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="endDate">End Date of Stay</label>  
+        <input type="date" id="endDate" name="endDate" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="entries">11. Number of Entries</label>  
+    <select id="entries" name="entries" required>  
+      <option value="">Select Number</option>  
+      <option value="single">Single</option>  
+      <option value="multiple">Multiple</option>  
+    </select>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="purpose">12. Aim of Visit</label>  
+    <select id="purpose" name="purpose" required>  
+      <option value="">Select Purpose</option>  
+      <option value="Study">Study</option>  
+      <option value="Work">Work</option>  
+      <option value="Tourism">Tourism</option>  
+      <option value="Business">Business</option>  
+      <option value="Other">Other</option>  
+    </select>  
+  </div>  
+
+  <div class="form-group">  
+    <label>13. Type of Vehicle of Entry and Exit</label>  
+    <div>  
+      <label><input type="checkbox" name="vehicle" value="Car"> Car</label>  
+      <label><input type="checkbox" name="vehicle" value="Train"> Train</label>  
+      <label><input type="checkbox" name="vehicle" value="Airplane"> Airplane</label>  
+      <label><input type="checkbox" name="vehicle" value="Ship"> Ship</label>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="route">14. The Route of Travel and Points to Visit</label>  
+    <textarea id="route" name="route" rows="3" required></textarea>  
+  </div>  
+
+  <div class="buttons">  
+    <button type="button" id="exportBtn">Export as DOCX</button>  
+    <button type="reset">Reset</button>  
+  </div>  
+</form>
+
+  </div>    <script>  
+    document.getElementById('exportBtn').addEventListener('click', async function() {  
+      // Get all form values  
+      const formData = {  
+        surname: document.getElementById('surname').value,  
+        gender: document.getElementById('gender').value,  
+        birthDate: document.getElementById('birthDate').value,  
+        birthPlace: document.getElementById('birthPlace').value,  
+        citizenship: document.getElementById('citizenship').value,  
+        nationality: document.getElementById('nationality').value,  
+        passportNumber: document.getElementById('passportNumber').value,  
+        issueDate: document.getElementById('issueDate').value,  
+        expiryDate: document.getElementById('expiryDate').value,  
+        position: document.getElementById('position').value,  
+        address: document.getElementById('address').value,  
+        visaPlace: document.getElementById('visaPlace').value,  
+        startDate: document.getElementById('startDate').value,  
+        endDate: document.getElementById('endDate').value,  
+        entries: document.getElementById('entries').value,  
+        purpose: document.getElementById('purpose').value,  
+        vehicles: Array.from(document.querySelectorAll('input[name="vehicle"]:checked')).map(cb => cb.value).join(', '),  
+        route: document.getElementById('route').value  
+      };  
+      // Format dates to DD.MM.YYYY  
+      const formatDate = (dateString) => {  
+        if (!dateString) return '';  
+        const date = new Date(dateString);  
+        const day = String(date.getDate()).padStart(2, '0');  
+        const month = String(date.getMonth() + 1).padStart(2, '0');  
+        const year = date.getFullYear();  
+        return `${day}.${month}.${year}`;  
+      };  
+      // Create DOCX document  
+      const {  
+        Document,  
+        Paragraph,  
+        TextRun,  
+        Table,  
+        TableRow,  
+        TableCell,  
+        AlignmentType,  
+        WidthType  
+      } = docx;  
+      const doc = new Document({  
+        sections: [{  
+          properties: {},  
+          children: [  
+            new Paragraph({  
+              text: "Visa Application",  
+              heading: "Heading1",  
+              alignment: AlignmentType.CENTER  
+            }),  
+            new Table({  
+              width: {  
+                size: 100,  
+                type: WidthType.PERCENTAGE,  
+              },  
+              rows: [  
+                createTableRow("1. Surname, name", formData.surname),  
+                createTableRow("2. Gender:", formData.gender),  
+                createTableRow("3. Date and place of birth:", `${formatDate(formData.birthDate)}, ${formData.birthPlace}`),  
+                createTableRow("4. Citizenship:", formData.citizenship),  
+                createTableRow("5. Nationality:", formData.nationality),  
+                createTableRow("6. Passport №:", formData.passportNumber),  
+                createTableRow("Date of issue:", `${formatDate(formData.issueDate)}-${formatDate(formData.expiryDate)}`),  
+                createTableRow("7. Current position, place of work/study:", formData.position),  
+                createTableRow("8. Home address:", formData.address),  
+                createTableRow("9. Place of obtaining a visa:", formData.visaPlace),  
+                createTableRow("10. Period of stay (exact dates):", `${formatDate(formData.startDate)}-${formatDate(formData.endDate)}`),  
+                createTableRow("11. Number of entries:", formData.entries === 'single' ? 'Single' : 'Multiple'),  
+                createTableRow("12. Aim of visit:", formData.purpose),  
+                createTableRow("13. Type of vehicle of entry and exit:", formData.vehicles),  
+                createTableRow("14. The route of travel and points to visit in Kazakhstan", formData.route),  
+              ],  
+            }),  
+          ],  
+        }],  
+      });  
+  
+      function createTableRow(label, value) {  
+        return new TableRow({  
+          children: [  
+            new TableCell({  
+              children: [new Paragraph(label)],  
+              width: {  
+                size: 30,  
+                type: WidthType.PERCENTAGE  
+              },  
+            }),  
+            new TableCell({  
+              children: [new Paragraph(value || '-')],  
+              width: {  
+                size: 70,  
+                type: WidthType.PERCENTAGE  
+              },  
+            }),  
+          ],  
+        });  
+      }  
+      // Generate the DOCX file  
+      const blob = await docx.Packer.toBlob(doc);  
+      // Create file name with current date  
+      const now = new Date();  
+      const fileName = `Visa_Application_${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}.docx`;  
+      // Create download link  
+      const a = document.createElement('a');  
+      a.href = URL.createObjectURL(blob);  
+      a.download = fileName;  
+      // Trigger download  
+      document.body.appendChild(a);  
+      a.click();  
+      // Clean up  
+      setTimeout(() => {  
+        document.body.removeChild(a);  
+        URL.revokeObjectURL(a.href);  
+      }, 100);  
+    });  
+  </script>  </body>  </html>  
+Bu kodni codepen saytida ishga tushirdim lekin u fayl saxranit qilmayapti <!DOCTYPE html>  <html lang="en">  <head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Visa Application Form</title>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.8.2/docx.min.js"></script>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      line-height: 1.6;  
+      margin: 0;  
+      padding: 20px;  
+      background-color: #f5f5f5;  
+    }  .container {  
+  max-width: 800px;  
+  margin: 0 auto;  
+  background-color: white;  
+  padding: 30px;  
+  border-radius: 8px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+
+h1 {  
+  text-align: center;  
+  color: #333;  
+  margin-bottom: 30px;  
+}  
+
+.form-group {  
+  margin-bottom: 20px;  
+}  
+
+label {  
+  display: block;  
+  margin-bottom: 5px;  
+  font-weight: bold;  
+}  
+
+input[type="text"],  
+input[type="date"],  
+select,  
+textarea {  
+  width: 100%;  
+  padding: 10px;  
+  border: 1px solid #ddd;  
+  border-radius: 4px;  
+  box-sizing: border-box;  
+}  
+
+.row {  
+  display: flex;  
+  gap: 20px;  
+}  
+
+.col {  
+  flex: 1;  
+}  
+
+.buttons {  
+  display: flex;  
+  justify-content: center;  
+  gap: 20px;  
+  margin-top: 30px;  
+}  
+
+button {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 12px 20px;  
+  border: none;  
+  border-radius: 4px;  
+  cursor: pointer;  
+  font-size: 16px;  
+}  
+
+button:hover {  
+  background-color: #45a049;  
+}  
+
+#exportBtn {  
+  background-color: #2196F3;  
+}  
+
+#exportBtn:hover {  
+  background-color: #0b7dda;  
+}
+
+  </style>  
+</head>  <body>  
+  <div class="container">  
+    <h1>Visa Application Form</h1>  <form id="visaForm">  
+  <div class="form-group">  
+    <label for="surname">1. Surname, Name</label>  
+    <input type="text" id="surname" name="surname" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="gender">2. Gender</label>  
+    <select id="gender" name="gender" required>  
+      <option value="">Select Gender</option>  
+      <option value="Male">Male</option>  
+      <option value="Female">Female</option>  
+    </select>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="birthDate">3. Date of Birth</label>  
+        <input type="date" id="birthDate" name="birthDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="birthPlace">Place of Birth</label>  
+        <input type="text" id="birthPlace" name="birthPlace" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="citizenship">4. Citizenship</label>  
+    <input type="text" id="citizenship" name="citizenship" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="nationality">5. Nationality</label>  
+    <input type="text" id="nationality" name="nationality" required>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="passportNumber">6. Passport №</label>  
+        <input type="text" id="passportNumber" name="passportNumber" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="issueDate">Date of Issue</label>  
+        <input type="date" id="issueDate" name="issueDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="expiryDate">Date of Expiry</label>  
+        <input type="date" id="expiryDate" name="expiryDate" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="position">7. Current Position, Place of Work/Study</label>  
+    <input type="text" id="position" name="position" required>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="address">8. Home Address</label>  
+    <textarea id="address" name="address" rows="3" required></textarea>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="visaPlace">9. Place of Obtaining a Visa</label>  
+    <input type="text" id="visaPlace" name="visaPlace" required>  
+  </div>  
+
+  <div class="row">  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="startDate">10. Start Date of Stay</label>  
+        <input type="date" id="startDate" name="startDate" required>  
+      </div>  
+    </div>  
+    <div class="col">  
+      <div class="form-group">  
+        <label for="endDate">End Date of Stay</label>  
+        <input type="date" id="endDate" name="endDate" required>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="entries">11. Number of Entries</label>  
+    <select id="entries" name="entries" required>  
+      <option value="">Select Number</option>  
+      <option value="single">Single</option>  
+      <option value="multiple">Multiple</option>  
+    </select>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="purpose">12. Aim of Visit</label>  
+    <select id="purpose" name="purpose" required>  
+      <option value="">Select Purpose</option>  
+      <option value="Study">Study</option>  
+      <option value="Work">Work</option>  
+      <option value="Tourism">Tourism</option>  
+      <option value="Business">Business</option>  
+      <option value="Other">Other</option>  
+    </select>  
+  </div>  
+
+  <div class="form-group">  
+    <label>13. Type of Vehicle of Entry and Exit</label>  
+    <div>  
+      <label><input type="checkbox" name="vehicle" value="Car"> Car</label>  
+      <label><input type="checkbox" name="vehicle" value="Train"> Train</label>  
+      <label><input type="checkbox" name="vehicle" value="Airplane"> Airplane</label>  
+      <label><input type="checkbox" name="vehicle" value="Ship"> Ship</label>  
+    </div>  
+  </div>  
+
+  <div class="form-group">  
+    <label for="route">14. The Route of Travel and Points to Visit</label>  
+    <textarea id="route" name="route" rows="3" required></textarea>  
+  </div>  
+
+  <div class="buttons">  
+    <button type="button" id="exportBtn">Export as DOCX</button>  
+    <button type="reset">Reset</button>  
+  </div>  
+</form>
+
+  </div>    <script>  
+    document.getElementById('exportBtn').addEventListener('click', async function() {  
+      // Get all form values  
+      const formData = {  
+        surname: document.getElementById('surname').value,  
+        gender: document.getElementById('gender').value,  
+        birthDate: document.getElementById('birthDate').value,  
+        birthPlace: document.getElementById('birthPlace').value,  
+        citizenship: document.getElementById('citizenship').value,  
+        nationality: document.getElementById('nationality').value,  
+        passportNumber: document.getElementById('passportNumber').value,  
+        issueDate: document.getElementById('issueDate').value,  
+        expiryDate: document.getElementById('expiryDate').value,  
+        position: document.getElementById('position').value,  
+        address: document.getElementById('address').value,  
+        visaPlace: document.getElementById('visaPlace').value,  
+        startDate: document.getElementById('startDate').value,  
+        endDate: document.getElementById('endDate').value,  
+        entries: document.getElementById('entries').value,  
+        purpose: document.getElementById('purpose').value,  
+        vehicles: Array.from(document.querySelectorAll('input[name="vehicle"]:checked')).map(cb => cb.value).join(', '),  
+        route: document.getElementById('route').value  
+      };  
+      // Format dates to DD.MM.YYYY  
+      const formatDate = (dateString) => {  
+        if (!dateString) return '';  
+        const date = new Date(dateString);  
+        const day = String(date.getDate()).padStart(2, '0');  
+        const month = String(date.getMonth() + 1).padStart(2, '0');  
+        const year = date.getFullYear();  
+        return `${day}.${month}.${year}`;  
+      };  
+      // Create DOCX document  
+      const {  
+        Document,  
+        Paragraph,  
+        TextRun,  
+        Table,  
+        TableRow,  
+        TableCell,  
+        AlignmentType,  
+        WidthType  
+      } = docx;  
+      const doc = new Document({  
+        sections: [{  
+          properties: {},  
+          children: [  
+            new Paragraph({  
+              text: "Visa Application",  
+              heading: "Heading1",  
+              alignment: AlignmentType.CENTER  
+            }),  
+            new Table({  
+              width: {  
+                size: 100,  
+                type: WidthTy
